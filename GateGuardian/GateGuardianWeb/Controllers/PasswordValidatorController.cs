@@ -5,6 +5,16 @@ namespace GateGuardianWeb.Controllers
 {
     public class PasswordValidatorController : Controller
     {
+        // LengthValidation
+        public bool LengthValidation(string input)
+        {
+            if (input == null || input.Length < 10)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -15,18 +25,11 @@ namespace GateGuardianWeb.Controllers
             return View();
         }
 
-        public bool LengthValidation(string input)
-        {
-            if (input == null || input.Length < 10)
-            {
-                return false;
-            }
-            return true;
-        }
-
         [HttpPost]
         public IActionResult Validate(Password password)
         {
+            // Build PasswordValidationResult Object
+
             PasswordValidation passwordValidation = new PasswordValidation()
             {
                 Length = "Failed"

@@ -7,6 +7,5 @@ namespace GateGuardianWeb.Models
         [Key]
         public int Id { get; set; }
         public string? Characters { get; set; }
-
     }
 }
