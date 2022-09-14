@@ -1,0 +1,19 @@
+﻿
+
+@model IEnumerable<Password>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Password Validator Introduction</h2>
+            <hr />
+            <p>After you click Proceed, you will submit a password that will go through validation test(s).</p>
+            <a asp-controller="PasswordValidator" asp-action="Validate" class="btn btn-warning">
+                Proceed to the Password Validator
+            </a>
+        </div>
+    </div>
+</div>
