@@ -30,20 +30,15 @@ namespace GateGuardianWeb.Controllers
         {
             // Build PasswordValidationResult Object
 
-            PasswordValidation passwordValidation = new PasswordValidation()
-            {
-                Length = "Failed"
-            };
-
             PasswordValidationResults passwordValidationResults = new PasswordValidationResults()
             {
                 Password = password,
-                PasswordValidation = passwordValidation
+                LengthValidation = "Failed."
             };
 
             if (LengthValidation(password.Characters).Equals(true))
             {
-                passwordValidation.Length = "Passed.";
+                passwordValidationResults.LengthValidation = "Passed.";
             }
             return View(passwordValidationResults);
         }
