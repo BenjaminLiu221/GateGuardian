@@ -27,16 +27,24 @@ namespace GateGuardianWeb.Controllers
 
         // Build PasswordValidationResult Object Here
 
+        public PasswordValidationResults BuildPasswordValidationResult(Password _password)
+        {
+            PasswordValidationResults passwordValidationResults = new PasswordValidationResults()
+            {
+                Password = _password,
+                LengthValidation = "Failed."
+            };
+
+            return passwordValidationResults;
+        }
+
+
         [HttpPost]
         public IActionResult Validate(Password password)
         {
             // Build PasswordValidationResult Object
 
-            PasswordValidationResults passwordValidationResults = new PasswordValidationResults()
-            {
-                Password = password,
-                LengthValidation = "Failed."
-            };
+            var passwordValidationResults = BuildPasswordValidationResult(password);
 
             if (LengthValidation(password.Characters).Equals(true))
             {
