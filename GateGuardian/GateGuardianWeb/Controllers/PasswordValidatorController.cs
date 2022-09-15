@@ -5,16 +5,6 @@ namespace GateGuardianWeb.Controllers
 {
     public class PasswordValidatorController : Controller
     {
-        // LengthValidation
-        public bool LengthValidation(string input)
-        {
-            if (input == null || input.Length < 10)
-            {
-                return false;
-            }
-            return true;
-        }
-
         public IActionResult Index()
         {
             return View();
@@ -25,6 +15,26 @@ namespace GateGuardianWeb.Controllers
             return View();
         }
 
+        // LengthValidation
+        public bool LengthValidation(string input)
+        {
+            if (input == null || input.Length < 10)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // NumberValidation
+        public bool NumberValidation(string input)
+        {
+            if (input == null || input.Any(char.IsDigit).Equals(false))
+            {
+                return false;
+            }
+            return true;
+        }
+
         // Build PasswordValidationResult Object Here
 
         public PasswordValidationResults BuildPasswordValidationResult(Password _password)
@@ -32,7 +42,8 @@ namespace GateGuardianWeb.Controllers
             PasswordValidationResults passwordValidationResults = new PasswordValidationResults()
             {
                 Password = _password,
-                LengthValidation = "Failed."
+                LengthValidation = "Failed.",
+                NumberValidation = "Failed."
             };
 
             return passwordValidationResults;
@@ -49,6 +60,10 @@ namespace GateGuardianWeb.Controllers
             if (LengthValidation(password.Characters).Equals(true))
             {
                 passwordValidationResults.LengthValidation = "Passed.";
+            }
+            if (NumberValidation(password.Characters).Equals(true))
+            {
+                passwordValidationResults.NumberValidation = "Passed.";
             }
             return View(passwordValidationResults);
         }
