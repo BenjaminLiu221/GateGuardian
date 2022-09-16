@@ -1,4 +1,5 @@
 using GateGuardianWeb.Controllers;
+using GateGuardianWeb.Models;
 using Xunit;
 
 namespace GateGuardianWeb.Tests
@@ -57,6 +58,35 @@ namespace GateGuardianWeb.Tests
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ShouldReturnPasswordValidationResultObj()
+        {
+            // Arrange
+            PasswordValidatorController _passwordValidatorController = new PasswordValidatorController();
+
+            Password _password = new Password()
+            {
+                Characters = "thisisareallylongpassword"
+            };
+
+            PasswordValidationResults expected = new PasswordValidationResults()
+            {
+                Password = _password,
+                LengthValidation = "Failed.",
+                NumberValidation = "Failed.",
+                CapitalizationValidation = "Failed.",
+            };
+
+            // Act
+            PasswordValidationResults actual = _passwordValidatorController.BuildPasswordValidationResult(_password);
+
+            // Assert
+            Assert.Equal(expected.Password, actual.Password);
+            Assert.Equal(expected.LengthValidation, actual.LengthValidation);
+            Assert.Equal(expected.NumberValidation, actual.NumberValidation);
+            Assert.Equal(expected.CapitalizationValidation, actual.CapitalizationValidation);
         }
     }
 }
