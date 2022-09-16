@@ -35,6 +35,17 @@ namespace GateGuardianWeb.Controllers
             return true;
         }
 
+        // CapitalizationValidation
+
+        public bool CapitalizationValidation(string input)
+        {
+            if (input == null || input.ToLower().Equals(input))
+            {
+                return false;
+            }
+            return true;
+        }
+
         // Build PasswordValidationResult Object Here
 
         public PasswordValidationResults BuildPasswordValidationResult(Password _password)
@@ -43,7 +54,8 @@ namespace GateGuardianWeb.Controllers
             {
                 Password = _password,
                 LengthValidation = "Failed.",
-                NumberValidation = "Failed."
+                NumberValidation = "Failed.",
+                CapitalizationValidation = "Failed.",
             };
 
             return passwordValidationResults;
@@ -64,6 +76,10 @@ namespace GateGuardianWeb.Controllers
             if (NumberValidation(password.Characters).Equals(true))
             {
                 passwordValidationResults.NumberValidation = "Passed.";
+            }
+            if (CapitalizationValidation(password.Characters).Equals(true))
+            {
+                passwordValidationResults.CapitalizationValidation = "Passed.";
             }
             return View(passwordValidationResults);
         }
