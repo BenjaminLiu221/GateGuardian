@@ -74,7 +74,7 @@ namespace GateGuardianWeb.Tests
             PasswordValidationResults expected = new PasswordValidationResults()
             {
                 Password = _password,
-                LengthValidation = "Failed.",
+                LengthValidation = "Passed.",
                 NumberValidation = "Failed.",
                 CapitalizationValidation = "Failed.",
             };

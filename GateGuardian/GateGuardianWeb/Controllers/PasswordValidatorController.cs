@@ -58,29 +58,26 @@ namespace GateGuardianWeb.Controllers
                 CapitalizationValidation = "Failed.",
             };
 
+            if (LengthValidation(_password.Characters).Equals(true))
+            {
+                passwordValidationResults.LengthValidation = "Passed.";
+            }
+            if (NumberValidation(_password.Characters).Equals(true))
+            {
+                passwordValidationResults.NumberValidation = "Passed.";
+            }
+            if (CapitalizationValidation(_password.Characters).Equals(true))
+            {
+                passwordValidationResults.CapitalizationValidation = "Passed.";
+            }
+
             return passwordValidationResults;
         }
-
 
         [HttpPost]
         public IActionResult Validate(Password password)
         {
-            // Build PasswordValidationResult Object
-
             var passwordValidationResults = BuildPasswordValidationResult(password);
-
-            if (LengthValidation(password.Characters).Equals(true))
-            {
-                passwordValidationResults.LengthValidation = "Passed.";
-            }
-            if (NumberValidation(password.Characters).Equals(true))
-            {
-                passwordValidationResults.NumberValidation = "Passed.";
-            }
-            if (CapitalizationValidation(password.Characters).Equals(true))
-            {
-                passwordValidationResults.CapitalizationValidation = "Passed.";
-            }
             return View(passwordValidationResults);
         }
     }
