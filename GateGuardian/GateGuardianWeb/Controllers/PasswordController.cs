@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GateGuardianWeb.Controllers
 {
-    public class PasswordValidatorController : Controller
+    public class PasswordController : Controller
     {
         public IActionResult Index()
         {
@@ -46,8 +46,6 @@ namespace GateGuardianWeb.Controllers
             return true;
         }
 
-        // Build PasswordValidationResult Object Here
-
         public PasswordValidationResults BuildPasswordValidationResult(Password _password)
         {
             PasswordValidationResults passwordValidationResults = new PasswordValidationResults()
@@ -79,6 +77,12 @@ namespace GateGuardianWeb.Controllers
         {
             var passwordValidationResults = BuildPasswordValidationResult(password);
             return View(passwordValidationResults);
+        }
+
+        [HttpGet(Name = "GetPasswords")]
+        public async Task<IActionResult> Get()
+        {
+            return Ok("Good Result.");
         }
     }
 }
