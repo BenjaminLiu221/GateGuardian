@@ -341,3 +341,4 @@ C:\Users\benja\Documents\Projects\GateGuardian\GateGuardian\GateGuardianWeb.Test
 C:\Users\benja\Documents\Projects\GateGuardian\GateGuardian\GateGuardianWeb.Tests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\benja\Documents\Projects\GateGuardian\GateGuardian\GateGuardianWeb.Tests\bin\Debug\net6.0\GateGuardianWeb.dll
 C:\Users\benja\Documents\Projects\GateGuardian\GateGuardian\GateGuardianWeb.Tests\bin\Debug\net6.0\GateGuardianWeb.pdb
+C:\Users\benja\Documents\Projects\GateGuardian\GateGuardian\GateGuardianWeb.Tests\bin\Debug\net6.0\FluentAssertions.dll

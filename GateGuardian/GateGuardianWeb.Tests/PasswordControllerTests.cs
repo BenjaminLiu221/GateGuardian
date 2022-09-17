@@ -1,20 +1,23 @@
+using FluentAssertions;
 using GateGuardianWeb.Controllers;
 using GateGuardianWeb.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace GateGuardianWeb.Tests
 {
-    public class PasswordValidatorControllerTests
+    public class PasswordControllerTests
     {
         [Fact]
         public void ShouldReturnTrueIfLengthIsGreaterThanTen()
         {
             // Arrange
-            PasswordValidatorController _passwordValidatorController = new PasswordValidatorController();
+            PasswordController _passwordController = new PasswordController();
             bool expected = true;
 
             // Act
-            bool actual = _passwordValidatorController.LengthValidation("goodlength");
+            bool actual = _passwordController.LengthValidation("goodlength");
 
             // Assert
             Assert.Equal(expected, actual);
@@ -28,12 +31,12 @@ namespace GateGuardianWeb.Tests
         public void ShouldReturnTrueIfLengthIsGreaterThanTenElseFalse(bool expectedResult, string? password)
         {
             // Arrange
-            PasswordValidatorController _passwordValidatorController = new PasswordValidatorController();
+            PasswordController _passwordController = new PasswordController();
             bool expected = expectedResult;
 
 
             // Act
-            bool actual = _passwordValidatorController.LengthValidation(password);
+            bool actual = _passwordController.LengthValidation(password);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -50,11 +53,11 @@ namespace GateGuardianWeb.Tests
         public void ShouldReturnTrueIfContainsANumberElseFalse(bool expectedResult, string? password)
         {
             // Arrange
-            PasswordValidatorController _passwordValidatorController = new PasswordValidatorController();
+            PasswordController _passwordController = new PasswordController();
             bool expected = expectedResult;
 
             // Act
-            bool actual = _passwordValidatorController.NumberValidation(password);
+            bool actual = _passwordController.NumberValidation(password);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -64,7 +67,7 @@ namespace GateGuardianWeb.Tests
         public void ShouldReturnPasswordValidationResultObj()
         {
             // Arrange
-            PasswordValidatorController _passwordValidatorController = new PasswordValidatorController();
+            PasswordController _passwordController = new PasswordController();
 
             Password _password = new Password()
             {
@@ -80,7 +83,7 @@ namespace GateGuardianWeb.Tests
             };
 
             // Act
-            PasswordValidationResults actual = _passwordValidatorController.BuildPasswordValidationResult(_password);
+            PasswordValidationResults actual = _passwordController.BuildPasswordValidationResult(_password);
 
             // Assert
             Assert.Equal(expected.Password, actual.Password);
@@ -88,5 +91,21 @@ namespace GateGuardianWeb.Tests
             Assert.Equal(expected.NumberValidation, actual.NumberValidation);
             Assert.Equal(expected.CapitalizationValidation, actual.CapitalizationValidation);
         }
+
+        [Fact]
+        // What behavior do we want our controller to do? What behavior do we want our actions to do?
+        public async Task Get_OnSuccess_ReturnsStatusCode200()
+        {
+            // Arrange
+            var sut = new PasswordController();
+
+            // Act
+            var result = (OkObjectResult)await sut.Get();
+
+            // Assert
+            result.StatusCode.Should().Be(200);
+
+        }
+
     }
 }

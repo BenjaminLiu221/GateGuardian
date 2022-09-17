@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xnNhZaD+DX+4x9UoJ9fi2Ky+oxzRd1axGaw8tbtuQwEtiaKccVX9Dbcts0h5rj0k6FnlkqyCCyKqL0Q6CQrLBA==",
+  "dgSpecHash": "jnPpy3oUSkyS6RZV5xQ9Um5b07HVB5PJcjLqFygrDDDOqA3tv+cBIwfuQAs70tVcF58U5L7rzLlrb2OFd0TzWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\benja\\Documents\\Projects\\GateGuardian\\GateGuardian\\GateGuardianWeb.Tests\\GateGuardianWeb.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\benja\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\fluentassertions\\6.7.0\\fluentassertions.6.7.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
