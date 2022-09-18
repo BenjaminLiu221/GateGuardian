@@ -23,12 +23,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/benja/Documents/Projects/GateGuardian/GateGuardian/GateGuardianWeb/Views/PasswordValidator/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRWYWxpZGF0b3JcSW5kZXguY3NodG1s
+[C:/Users/benja/Documents/Projects/GateGuardian/GateGuardian/GateGuardianWeb/Views/Passwords/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/benja/Documents/Projects/GateGuardian/GateGuardian/GateGuardianWeb/Views/PasswordValidator/Validate.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRWYWxpZGF0b3JcVmFsaWRhdGUuY3NodG1s
+[C:/Users/benja/Documents/Projects/GateGuardian/GateGuardian/GateGuardianWeb/Views/Passwords/Validate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRzXFZhbGlkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/benja/Documents/Projects/GateGuardian/GateGuardian/GateGuardianWeb/Views/Shared/Error.cshtml]
