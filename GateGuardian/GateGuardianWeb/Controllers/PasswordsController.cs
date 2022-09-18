@@ -3,8 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GateGuardianWeb.Controllers
 {
-    public class PasswordController : Controller
+    public class PasswordsController : Controller
     {
+        private readonly IPasswordsService _passwordsService;
+
+        public PasswordsController(IPasswordsService passwordsService)
+        {
+            _passwordsService = passwordsService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -82,7 +89,13 @@ namespace GateGuardianWeb.Controllers
         [HttpGet(Name = "GetPasswords")]
         public async Task<IActionResult> Get()
         {
-            return Ok("Good Result.");
+            var passwords = await _passwordsService.GetAllPasswords();
+
+            if (passwords.Any())
+            {
+                return Ok(passwords);
+            }
+            return NotFound();
         }
     }
 }
