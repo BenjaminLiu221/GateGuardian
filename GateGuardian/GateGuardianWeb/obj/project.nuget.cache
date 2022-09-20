@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "OFTjskqlFhFArbzudxe0aCqds374+bh7tuNDzU9p5rx8sHChx0ur5Dv7nJ0zdkF9LPQoJTx+KYmkhMO9Q+woVg==",
+  "dgSpecHash": "avPBtHbqRD4eNbcbEEFWSP49OQN46K3q4IilZGopTBMYvnAxkBBo/muwcHJ9aJKwSn9R72jrOJuULCnKrfj8eA==",
   "success": true,
   "projectFilePath": "C:\\Users\\benja\\Documents\\Projects\\GateGuardian\\GateGuardian\\GateGuardianWeb\\GateGuardianWeb.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\benja\\.nuget\\packages\\graphql.client\\5.1.0\\graphql.client.5.1.0.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\graphql.client.abstractions\\5.1.0\\graphql.client.abstractions.5.1.0.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\graphql.client.abstractions.websocket\\5.1.0\\graphql.client.abstractions.websocket.5.1.0.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\graphql.client.serializer.newtonsoft\\5.1.0\\graphql.client.serializer.newtonsoft.5.1.0.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\graphql.primitives\\5.1.0\\graphql.primitives.5.1.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
@@ -139,6 +144,7 @@
     "C:\\Users\\benja\\.nuget\\packages\\system.net.sockets\\4.3.0\\system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\system.reflection.emit\\4.6.0\\system.reflection.emit.4.6.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",

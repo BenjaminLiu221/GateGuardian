@@ -1,4 +1,8 @@
 using GateGuardianWeb.Data;
+using GateGuardianWeb.GraphQL;
+using GraphQL.Client.Abstractions;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 builder.Services.AddHttpClient();
+//builder.Services.AddScoped<GraphQLHttpClient>(s => new GraphQLHttpClient("GraphQLURI", new NewtonsoftJsonSerializer()));
+builder.Services.AddScoped<BusinessConsumer>();
 
 var app = builder.Build();
 

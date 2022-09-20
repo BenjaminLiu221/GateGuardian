@@ -32,6 +32,66 @@
           "lib/net6.0/FluentAssertions.dll": {}
         }
       },
+      "GraphQL.Client/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.Client.Abstractions": "5.1.0",
+          "GraphQL.Client.Abstractions.Websocket": "5.1.0",
+          "System.Reactive": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.dll": {}
+        }
+      },
+      "GraphQL.Client.Abstractions/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.Primitives": "5.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Client.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.Abstractions.dll": {}
+        }
+      },
+      "GraphQL.Client.Abstractions.Websocket/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.Client.Abstractions": "5.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Client.Abstractions.Websocket.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.Abstractions.Websocket.dll": {}
+        }
+      },
+      "GraphQL.Client.Serializer.Newtonsoft/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL.Client.Abstractions.Websocket": "5.1.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Client.Serializer.Newtonsoft.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.Serializer.Newtonsoft.dll": {}
+        }
+      },
+      "GraphQL.Primitives/5.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Primitives.dll": {}
+        }
+      },
       "Humanizer.Core/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2752,6 +2812,18 @@
           "ref/netstandard/_._": {}
         }
       },
+      "System.Reactive/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {}
+        },
+        "build": {
+          "buildTransitive/net5.0/_._": {}
+        }
+      },
       "System.Reflection/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3535,6 +3607,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GraphQL.Client": "5.1.0",
+          "GraphQL.Client.Serializer.Newtonsoft": "5.1.0",
           "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.8",
@@ -3656,6 +3730,88 @@
         "lib/netstandard2.1/FluentAssertions.dll",
         "lib/netstandard2.1/FluentAssertions.pdb",
         "lib/netstandard2.1/FluentAssertions.xml"
+      ]
+    },
+    "GraphQL.Client/5.1.0": {
+      "sha512": "ygsFiS/+DSQBmfP1kjmVk8igODFGNihy81EzTqrq7RmwHgyS34+5Nm9Jkd4mgpFsC8a8UZaWerTilKGqDyePHg==",
+      "type": "package",
+      "path": "graphql.client/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "graphql.client.5.1.0.nupkg.sha512",
+        "graphql.client.nuspec",
+        "lib/net461/GraphQL.Client.dll",
+        "lib/net461/GraphQL.Client.xml",
+        "lib/netstandard2.0/GraphQL.Client.dll",
+        "lib/netstandard2.0/GraphQL.Client.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Client.Abstractions/5.1.0": {
+      "sha512": "IwZUs8WZtSUorZMKaqxykA/PFtn59gVcwbmkPecjnts2mk+sj/x2owlVbv5SnS2f9Za54zFPG2U3YOGZwBk3NQ==",
+      "type": "package",
+      "path": "graphql.client.abstractions/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "graphql.client.abstractions.5.1.0.nupkg.sha512",
+        "graphql.client.abstractions.nuspec",
+        "lib/netstandard2.0/GraphQL.Client.Abstractions.dll",
+        "lib/netstandard2.0/GraphQL.Client.Abstractions.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Client.Abstractions.Websocket/5.1.0": {
+      "sha512": "4Pctkq7yrhzDYDrR/BGhsp6HEM4i9JHaBQ2KQIeIzDjHGY55YueIRujGcFziJ8KGFRJvQxnpjrGX2+FPRANNCQ==",
+      "type": "package",
+      "path": "graphql.client.abstractions.websocket/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "graphql.client.abstractions.websocket.5.1.0.nupkg.sha512",
+        "graphql.client.abstractions.websocket.nuspec",
+        "lib/netstandard2.0/GraphQL.Client.Abstractions.Websocket.dll",
+        "lib/netstandard2.0/GraphQL.Client.Abstractions.Websocket.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Client.Serializer.Newtonsoft/5.1.0": {
+      "sha512": "SM7ijGJqtFbTsHedjMnDNfGCQqz+ha5C+8XsvV5k59fu+7qnWQ333+LqlkHrKO0s77BMGzZ9dHWakRpQAdMcPg==",
+      "type": "package",
+      "path": "graphql.client.serializer.newtonsoft/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "graphql.client.serializer.newtonsoft.5.1.0.nupkg.sha512",
+        "graphql.client.serializer.newtonsoft.nuspec",
+        "lib/netstandard2.0/GraphQL.Client.Serializer.Newtonsoft.dll",
+        "lib/netstandard2.0/GraphQL.Client.Serializer.Newtonsoft.xml",
+        "logo.64x64.png"
+      ]
+    },
+    "GraphQL.Primitives/5.1.0": {
+      "sha512": "NQmodHoO343gQW9/LbBWteRWlQhLxHV661s3Su8lHl2bPHZ0eauWBkjzWuVY9mLDo54mEDhQv5dTCkFnW21meA==",
+      "type": "package",
+      "path": "graphql.primitives/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "graphql.primitives.5.1.0.nupkg.sha512",
+        "graphql.primitives.nuspec",
+        "lib/netstandard2.0/GraphQL.Primitives.dll",
+        "lib/netstandard2.0/GraphQL.Primitives.xml",
+        "logo.64x64.png"
       ]
     },
     "Humanizer.Core/2.2.0": {
@@ -8612,6 +8768,35 @@
         "ref/netstandard/_._",
         "system.private.uri.4.3.2.nupkg.sha512",
         "system.private.uri.nuspec"
+      ]
+    },
+    "System.Reactive/5.0.0": {
+      "sha512": "erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "type": "package",
+      "path": "system.reactive/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net5.0/_._",
+        "build/netcoreapp3.1/System.Reactive.dll",
+        "build/netcoreapp3.1/System.Reactive.targets",
+        "build/netcoreapp3.1/System.Reactive.xml",
+        "buildTransitive/net5.0/_._",
+        "buildTransitive/netcoreapp3.1/System.Reactive.targets",
+        "lib/net472/System.Reactive.dll",
+        "lib/net472/System.Reactive.xml",
+        "lib/net5.0-windows10.0.19041/System.Reactive.dll",
+        "lib/net5.0-windows10.0.19041/System.Reactive.xml",
+        "lib/net5.0/System.Reactive.dll",
+        "lib/net5.0/System.Reactive.xml",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.16299/System.Reactive.dll",
+        "lib/uap10.0.16299/System.Reactive.pri",
+        "lib/uap10.0.16299/System.Reactive.xml",
+        "system.reactive.5.0.0.nupkg.sha512",
+        "system.reactive.nuspec"
       ]
     },
     "System.Reflection/4.3.0": {
