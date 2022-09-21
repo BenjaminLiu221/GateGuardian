@@ -11,5 +11,6 @@ namespace GateGuardianWeb.Data
         }
 
         public DbSet<Password> Passwords { get; set; }
+        public DbSet<Authorization> Authorizations { get; set; }
     }
 }
