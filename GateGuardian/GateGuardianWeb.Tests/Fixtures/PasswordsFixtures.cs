@@ -1,4 +1,4 @@
-﻿using GateGuardianWeb.Models;
+﻿using GateGuardianWeb.Models.Passwords;
 using System;
 using System.Collections.Generic;
 

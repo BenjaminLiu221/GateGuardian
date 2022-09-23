@@ -1,4 +1,6 @@
-﻿using GateGuardianWeb.Models.Passwords;
+﻿using GateGuardianWeb.Config;
+using GateGuardianWeb.Models.Passwords;
+using Microsoft.Extensions.Options;
 using System;
 
 public interface IPasswordsService
@@ -8,8 +10,26 @@ public interface IPasswordsService
 
 public class PasswordsService: IPasswordsService
 {
-    public Task<List<Password>> GetAllPasswords()
+    private readonly HttpClient _httpClient;
+    private readonly PasswordsApiOptions _apiConfig;
+
+    public PasswordsService(HttpClient httpClient, IOptions<PasswordsApiOptions> apiConfig)
     {
-        throw new NotImplementedException();
+        _httpClient = httpClient;
+        _apiConfig = apiConfig.Value;
+    }
+
+    public async Task<List<Password>> GetAllPasswords()
+    {
+        var passwordsResponse = await _httpClient
+            .GetAsync("https://foo.com");
+
+        if (passwordsResponse.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            return new List<Password> { };
+        }
+        var responseContent = passwordsResponse.Content;
+        var allPasswords = await responseContent.ReadFromJsonAsync<List<Password>>();
+        return allPasswords.ToList();
     }
 }

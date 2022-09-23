@@ -1,4 +1,4 @@
-﻿using GateGuardianWeb.Models;
+﻿using GateGuardianWeb.Models.Passwords;
 using Microsoft.EntityFrameworkCore;
 
 namespace GateGuardianWeb.Data
@@ -11,6 +11,5 @@ namespace GateGuardianWeb.Data
         }
 
         public DbSet<Password> Passwords { get; set; }
-        public DbSet<Authorization> Authorizations { get; set; }
     }
 }

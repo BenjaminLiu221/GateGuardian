@@ -1,6 +1,7 @@
 using FluentAssertions;
 using GateGuardianWeb.Controllers;
 using GateGuardianWeb.Models;
+using GateGuardianWeb.Models.Passwords;
 using GateGuardianWeb.Tests.Fixtures;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -164,14 +165,6 @@ public class PasswordControllerTests
 
         mockPasswordsService
             .Setup(service => service.GetAllPasswords())
-            //.ReturnsAsync(new List<Password>()
-            //{
-            //    new()
-            //    {
-            //        Id = 1,
-            //        Characters = "DefaultMockPassword"
-            //    }
-            //});
             .ReturnsAsync(PasswordsFixtures.GetTestPasswords());
 
         var sut = new PasswordsController(mockPasswordsService.Object);
