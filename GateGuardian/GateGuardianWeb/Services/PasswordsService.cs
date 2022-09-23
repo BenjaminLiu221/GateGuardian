@@ -22,7 +22,7 @@ public class PasswordsService: IPasswordsService
     public async Task<List<Password>> GetAllPasswords()
     {
         var passwordsResponse = await _httpClient
-            .GetAsync("https://foo.com");
+            .GetAsync(_apiConfig.Endpoint);
 
         if (passwordsResponse.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
