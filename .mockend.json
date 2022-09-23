@@ -1,7 +1,8 @@
 {
-  "Password": {
-    "Id": { "int": {} },
-    "Characters": {
-      "string"
-    }
+  "name": {
+    "string": [
+      "Thor",
+      "Loki"
+    ]
+  }
 }
