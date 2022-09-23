@@ -1,5 +1,5 @@
 ﻿using GateGuardianWeb.Data;
-using GateGuardianWeb.Models;
+using GateGuardianWeb.Models.YelpFusion;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
 using Newtonsoft.Json;
@@ -38,7 +38,6 @@ namespace GateGuardianWeb.Controllers
                 total = jsonDeserialize.total,
                 region = jsonDeserialize.region,
             };
-            Console.WriteLine("");
             return View(roots);
         }
 

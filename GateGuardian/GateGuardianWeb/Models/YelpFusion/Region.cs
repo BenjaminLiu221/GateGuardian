@@ -1,4 +1,4 @@
-﻿namespace GateGuardianWeb.Models
+﻿namespace GateGuardianWeb.Models.YelpFusion
 {
     public class Region
     {
