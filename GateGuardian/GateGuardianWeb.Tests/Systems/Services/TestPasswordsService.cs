@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using GateGuardianWeb.Config;
 using GateGuardianWeb.Models.Passwords;
 using GateGuardianWeb.Tests.Fixtures;
 using GateGuardianWeb.Tests.Helpers;
@@ -26,7 +27,12 @@ namespace GateGuardianWeb.Tests.Systems.Services
             var handlerMock = MockHttpMessageHandler<Password>
                 .SetupBasicGetResourceList(expectedResponse);
             var httpClient = new HttpClient(handlerMock.Object);
-            var sut = new PasswordsService(httpClient);
+            var endpoint = "https://example.com";
+            var config = Options.Create(new PasswordsApiOptions
+            {
+                Endpoint = endpoint
+            });
+            var sut = new PasswordsService(httpClient, config);
 
             // Act
             await sut.GetAllPasswords();
@@ -50,7 +56,12 @@ namespace GateGuardianWeb.Tests.Systems.Services
             var handlerMock = MockHttpMessageHandler<Password>
                 .SetupReturn404(expectedResponse);
             var httpClient = new HttpClient(handlerMock.Object);
-            var sut = new PasswordsService(httpClient);
+            var endpoint = "https://example.com";
+            var config = Options.Create(new PasswordsApiOptions
+            {
+                Endpoint = endpoint
+            });
+            var sut = new PasswordsService(httpClient, config);
 
             // Act
             var result = await sut.GetAllPasswords();
@@ -67,7 +78,12 @@ namespace GateGuardianWeb.Tests.Systems.Services
             var handlerMock = MockHttpMessageHandler<Password>
                 .SetupBasicGetResourceList(expectedResponse);
             var httpClient = new HttpClient(handlerMock.Object);
-            var sut = new PasswordsService(httpClient);
+            var endpoint = "https://example.com";
+            var config = Options.Create(new PasswordsApiOptions
+            {
+                Endpoint = endpoint
+            });
+            var sut = new PasswordsService(httpClient, config);
 
             // Act
             var result = await sut.GetAllPasswords();
@@ -88,7 +104,7 @@ namespace GateGuardianWeb.Tests.Systems.Services
 
             var config = Options.Create(new PasswordsApiOptions
             {
-                Endpoint = "https://example.com/passwords"
+                Endpoint = endpoint
             });
 
             var sut = new PasswordsService(httpClient, config);
@@ -96,8 +112,19 @@ namespace GateGuardianWeb.Tests.Systems.Services
             // Act
             var result = await sut.GetAllPasswords();
 
+            var uri = new Uri(endpoint);
+
             // Assert
-            result.Count.Should().Be(expectedResponse.Count);
+            handlerMock
+                .Protected()
+                .Verify(
+                "SendAsync",
+                Times.Exactly(1),
+                ItExpr.Is<HttpRequestMessage>(
+                    req => req.Method == HttpMethod.Get 
+                    && req.RequestUri == uri),
+                ItExpr.IsAny<CancellationToken>()
+                );
         }
     }
 }
