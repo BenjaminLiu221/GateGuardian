@@ -1,3 +1,4 @@
+using GateGuardianWeb.Config;
 using GateGuardianWeb.Data;
 using GraphQL.Client.Abstractions;
 using GraphQL.Client.Http;
@@ -40,5 +41,9 @@ app.Run();
 
 void ConfigureServices(IServiceCollection services)
 {
+    services.Configure<PasswordsApiOptions>(
+        builder.Configuration.GetSection("PasswordsApiOptions")
+    );
     services.AddTransient<IPasswordsService, PasswordsService>();
+    services.AddHttpClient<IPasswordsService, PasswordsService>();
 }
