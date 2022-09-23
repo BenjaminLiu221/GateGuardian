@@ -1,4 +1,4 @@
-﻿namespace GateGuardianWeb.Models
+﻿namespace GateGuardianWeb.Models.Passwords
 {
     public class PasswordValidationResults
     {

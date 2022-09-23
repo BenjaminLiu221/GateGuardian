@@ -1,4 +1,4 @@
-﻿using GateGuardianWeb.Models;
+﻿using GateGuardianWeb.Models.Passwords;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GateGuardianWeb.Controllers

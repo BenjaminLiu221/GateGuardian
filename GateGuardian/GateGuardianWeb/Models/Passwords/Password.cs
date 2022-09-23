@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GateGuardianWeb.Models
+namespace GateGuardianWeb.Models.Passwords
 {
     public class Password
     {
